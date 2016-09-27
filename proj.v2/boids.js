@@ -7,10 +7,13 @@ function Boid() {
 
 
   this.render = function() {
+    push();
     fill(107, 228, 232);
     strokeWeight(3);
     stroke(218, 224, 105);
-    ellipse(this.loc.x, this.loc.y, 10, 10);
+    imageMode(CENTER);
+    image(timb, this.loc.x, this.loc.y, 30, 30);
+    pop();
 
   }
 
@@ -33,6 +36,7 @@ function Boid() {
 
     if (this.loc.dist(r.loc) < 50) {
       push();
+      strokeWeight(3);
       stroke(255, 0, 0);
       line(this.loc.x, this.loc.y, r.loc.x, r.loc.y);
       pop();
@@ -41,6 +45,7 @@ function Boid() {
       this.vel.limit(random(3, 6));
     } else if (this.loc.dist(r.loc) < 90) {
       push();
+      strokeWeight(3);
       stroke(255, 0, 0);
       line(this.loc.x, this.loc.y, r.loc.x, r.loc.y);
       pop();
@@ -49,6 +54,7 @@ function Boid() {
       this.vel.limit(random(1, 2));
     } else if (this.loc.dist(a.loc) < 100) {
       push();
+      strokeWeight(3);
       stroke(0, 255, 0);
       line(this.loc.x, this.loc.y, a.loc.x, a.loc.y);
       pop();
@@ -57,6 +63,7 @@ function Boid() {
       this.vel.limit(random(3, 6));
     } else if (this.loc.dist(a.loc) < 90) {
       push();
+      strokeWeight(3);
       stroke(0, 255, 0);
       line(this.loc.x, this.loc.y, a.loc.x, a.loc.y);
       pop();

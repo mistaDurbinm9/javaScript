@@ -5,9 +5,12 @@ function Repeller() {
   this.loc = createVector(random(width), random(height));
   
   this.render = function() {
+    push();
     fill(228, 107, 232);
     strokeWeight(3);
     stroke(218, 224, 105);
-    ellipse(this.loc.x, this.loc.y, 50, 50);
+    imageMode(CENTER);
+    image(lopezM, this.loc.x, this.loc.y, 70, 70);
+    pop();
   }
 }

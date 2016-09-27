@@ -5,9 +5,12 @@ function Attractor() {
   this.loc = createVector(random(width), random(height));
   
   this.render = function() {
+    push();
     fill(218, 224, 105);
     strokeWeight(3);
     stroke(228, 107, 232);
-    ellipse(this.loc.x, this.loc.y, 50, 50);
+    imageMode(CENTER);
+    image(lopezH, this.loc.x, this.loc.y, 70, 70);
+    pop();
   }
 }
